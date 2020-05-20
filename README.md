@@ -17,8 +17,8 @@ The goal is to write the right word in the right space.
 
 ## Mock-Up's
 
-<img src="Mockup/Mockup_01.png" width="150" /> <img src="Mockup/Mockup_02.png" width="150" />
+<img src="app/src/main/res/Mockup/Mockup_01.png" width="150" /> <img src="app/src/main/res/Mockup/Mockup_02.png" width="150" />
 
-<img src="Mockup/Mockup_03.png" width="150" /> <img src="Mockup/Mockup_04.png" width="150" /> <img src="Mockup/Mockup_05.png" width="150" />
+<img src="app/src/main/res/Mockup/Mockup_03.png" width="150" /> <img src="app/src/main/res/Mockup/Mockup_04.png" width="150" /> <img src="app/src/main/res/Mockup/Mockup_05.png" width="150" />
 
-<img src="Mockup/Mockup_06.png" width="150" /> <img src="Mockup/Mockup_07.png" width="150" />
+<img src="app/src/main/res/Mockup/Mockup_06.png" width="150" /> <img src="app/src/main/res/Mockup/Mockup_07.png" width="150" />
