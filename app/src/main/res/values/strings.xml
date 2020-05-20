@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WikipediaLanguage</string>
+    <string name="MainMenuButtonDescription">Go!</string>
+    <string name="MainTitle">LingoPedia</string>
+
+    <string name="title_activity_game_text">GameTextActivity</string>
+    <string name="GoBack">Go Back</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
