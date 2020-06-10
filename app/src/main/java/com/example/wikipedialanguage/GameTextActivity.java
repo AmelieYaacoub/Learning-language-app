@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.wikipedialanguage.Services.APIConnectivityService;
+import com.example.wikipedialanguage.Services.JSONParseService;
 
 import org.json.JSONObject;
 
@@ -27,18 +28,15 @@ public class GameTextActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_text);
 
         APIConnectivityService APIConnection = new APIConnectivityService();
-
+        JSONParseService callbutt = new JSONParseService(); //Calling the Class
 
       //  toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         TextView mainText = (TextView)findViewById(R.id.textView3);
 
-        try {
-            String something = APIConnection.execute().get();
-            mainText.setText(something);
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+        String extract = callbutt.GetFlatWikipediaText();
+        mainText.setText(extract);
+
 
 
     }
