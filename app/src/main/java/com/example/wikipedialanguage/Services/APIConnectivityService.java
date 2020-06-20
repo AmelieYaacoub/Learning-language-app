@@ -11,7 +11,7 @@ import java.net.URL;
 public class APIConnectivityService  extends AsyncTask<String,String,String> {
     private String GetFlatWikipediaText(){
         try{
-            URL url = new URL("https://en.wikipedia.org/api/rest_v1/page/random/summary");
+            URL url = new URL("https://en.wikipedia.org/api/rest_v1/page/random/summary"); //Get random Article
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             BufferedReader in = new BufferedReader(
