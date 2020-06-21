@@ -12,9 +12,11 @@ import android.widget.TextView;
 
 import com.example.wikipedialanguage.Services.APIConnectivityService;
 import com.example.wikipedialanguage.Services.JSONParseService;
+import com.example.wikipedialanguage.Services.SelectedWordsService;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class GameTextActivity extends AppCompatActivity {
@@ -29,14 +31,23 @@ public class GameTextActivity extends AppCompatActivity {
 
         APIConnectivityService APIConnection = new APIConnectivityService();
         JSONParseService callbutt = new JSONParseService(); //Calling the Class
+        SelectedWordsService callWordList = new SelectedWordsService(); //Calling the Class
 
       //  toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+
         TextView mainText = (TextView)findViewById(R.id.textView3);
 
         String extract = callbutt.GetFlatWikipediaText();
         mainText.setText(extract);
 
+
+
+        TextView wordListView = (TextView)findViewById(R.id.wordList);
+
+        ArrayList words = callWordList.GetWordsFromRandomText();
+        String res = String.join(",", words);
+        wordListView.setText(res);
 
 
     }

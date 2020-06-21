@@ -1,8 +1,11 @@
 package com.example.wikipedialanguage.Services;
 
+
+import java.util.ArrayList;
+
 public class SelectedWordsService {
 
-    public String GetWordsFromRandomText () {
+    public ArrayList GetWordsFromRandomText () {
 
         JSONParseService parseService = new JSONParseService(); //Create new Instance
 
@@ -12,6 +15,12 @@ public class SelectedWordsService {
 
         String randomItem = arrOfStr[(int) Math.floor(Math.random() * arrOfStr.length)]; //Get random item of the array
 
+        ArrayList<String> arrOfSelectedWords = new ArrayList<String>();
+
+           while (arrOfSelectedWords.size() < 5){
+                arrOfSelectedWords.add(randomItem);
+           }
+        return arrOfSelectedWords;
 
     }
 }
