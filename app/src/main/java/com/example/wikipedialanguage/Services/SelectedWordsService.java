@@ -1,11 +1,13 @@
 package com.example.wikipedialanguage.Services;
 
 
+import com.example.wikipedialanguage.Models.GameData;
+
 import java.util.ArrayList;
 
 public class SelectedWordsService {
 
-    public ArrayList GetWordsFromRandomText () {
+        public GameData GetWordsFromRandomText () {
 
         JSONParseService parseService = new JSONParseService(); //Create new Instance
 
@@ -13,14 +15,15 @@ public class SelectedWordsService {
 
         String[] arrOfStr = givenText.split(" "); //Split the String (the Text) and put it in an array (each word is a string now)
 
-        String randomItem = arrOfStr[(int) Math.floor(Math.random() * arrOfStr.length)]; //Get random item of the array
 
-        ArrayList<String> arrOfSelectedWords = new ArrayList<String>();
+        ArrayList<String> arrOfSelectedWords = new ArrayList<String>(); //New List for the selected words
 
            while (arrOfSelectedWords.size() < 5){
-                arrOfSelectedWords.add(randomItem);
+               String randomItem = arrOfStr[(int) Math.floor(Math.random() * arrOfStr.length)]; //Get random item of the array
+               arrOfSelectedWords.add(randomItem); //add words to the list
            }
-        return arrOfSelectedWords;
+
+            return new GameData(givenText,arrOfSelectedWords);
 
     }
 }
