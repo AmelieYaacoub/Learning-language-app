@@ -24,7 +24,6 @@ import java.util.concurrent.ExecutionException;
 
 public class GameTextActivity extends AppCompatActivity {
     private Button button;
-    Toolbar toolbar;
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -33,27 +32,23 @@ public class GameTextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_text);
 
+        textFunction(null);
+    }
+
+    public void textFunction(View V) {
         APIConnectivityService APIConnection = new APIConnectivityService();
         SelectedWordsService callWordList = new SelectedWordsService(); //Calling the Class
 
-      //  toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        TextView mainText = (TextView) findViewById(R.id.textView3);
 
-        TextView mainText = (TextView)findViewById(R.id.textView3);
-
-
-
-
-        TextView wordListView = (TextView)findViewById(R.id.wordList);
+        TextView wordListView = (TextView) findViewById(R.id.wordList);
 
         GameData gameData = callWordList.GetWordsFromRandomText();
         String res = String.join(",", gameData.getMissingWords());
         wordListView.setText(res);
         mainText.setText(gameData.getGameText());
-
-
-
     }
+
     public void GoBack(View V){
         Intent intent = new Intent(getBaseContext(), MainActivity.class);
         startActivity(intent);
