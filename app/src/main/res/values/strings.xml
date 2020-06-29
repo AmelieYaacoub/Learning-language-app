@@ -6,4 +6,6 @@
     <string name="title_activity_game_text">GameTextActivity</string>
     <string name="GoBack">Go Back</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="todo">TODO</string>
+    <string name="deutschland">Deutschland</string>
 </resources>
