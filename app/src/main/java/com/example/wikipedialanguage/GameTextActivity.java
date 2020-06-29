@@ -47,6 +47,7 @@ public class GameTextActivity extends AppCompatActivity {
         Spinner spinnerCountries = findViewById(R.id.spinner_countries);
         mAdapter = new CountryAdapter(this, mCountryList);
         spinnerCountries.setAdapter(mAdapter);
+        
         spinnerCountries.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

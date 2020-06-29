@@ -79,6 +79,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.555" />
 
+        <ImageView
+            android:id="@+id/lingopediaLogoGame"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:background="@drawable/lingopedia"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.346" />
+
         <Spinner
             android:id="@+id/spinner_countries"
             android:layout_width="wrap_content"
