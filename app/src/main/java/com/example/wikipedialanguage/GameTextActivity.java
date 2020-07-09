@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.wikipedialanguage.Models.GameData;
+import com.example.wikipedialanguage.Models.Language;
 import com.example.wikipedialanguage.Services.APIConnectivityService;
 import com.example.wikipedialanguage.Services.CountryAdapter;
 import com.example.wikipedialanguage.Services.CountryItem;
@@ -54,6 +55,7 @@ public class GameTextActivity extends AppCompatActivity {
                 CountryItem clickedItem = (CountryItem) parent.getItemAtPosition(position);
                 String clickedCountryName = clickedItem.getCountryName();
                 Toast.makeText(GameTextActivity.this, clickedCountryName + " selected", Toast.LENGTH_SHORT).show();
+                textFunction(view, clickedItem);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -63,19 +65,21 @@ public class GameTextActivity extends AppCompatActivity {
     }
     //Connectivity:
     public void textFunction(View V) {
-        APIConnectivityService APIConnection = new APIConnectivityService();
-        SelectedWordsService callWordList = new SelectedWordsService(); //Calling the Class
-
-        TextView mainText = (TextView) findViewById(R.id.textView3);
-
-        TextView wordListView = (TextView) findViewById(R.id.wordList);
-
-        GameData gameData = callWordList.GetWordsFromRandomText();
-        String res = String.join(",", gameData.getMissingWords());
-        wordListView.setText(res);
-        mainText.setText(gameData.getGameText());
+        textFunction(V, new CountryItem("English", R.drawable.button_language_en, Language.LanguageCode.EN));
     }
+public void textFunction(View V, CountryItem countryItem){
+    SelectedWordsService callWordList = new SelectedWordsService(); //Calling the Class
 
+    TextView mainText = (TextView) findViewById(R.id.textView3);
+
+    TextView wordListView = (TextView) findViewById(R.id.wordList);
+
+    GameData gameData = callWordList.GetWordsFromRandomText(countryItem.getLanguageCode());
+    String res = String.join(",", gameData.getMissingWords());
+    wordListView.setText(res);
+    mainText.setText(gameData.get_GameTextWithBlanks());
+
+}
     public void GoBack(View V){
         Intent intent = new Intent(getBaseContext(), MainActivity.class);
         startActivity(intent);
@@ -85,10 +89,10 @@ public class GameTextActivity extends AppCompatActivity {
         //Items for the Spinner:
         private void initList() {
             mCountryList = new ArrayList<>();
-            mCountryList.add(new CountryItem("Português", R.drawable.button_language_pt));
-            mCountryList.add(new CountryItem("English", R.drawable.button_language_en));
-            mCountryList.add(new CountryItem("Français", R.drawable.button_language_fr));
-            mCountryList.add(new CountryItem("Deutsch", R.drawable.button_language_de));
+            mCountryList.add(new CountryItem("Português", R.drawable.button_language_pt, Language.LanguageCode.PT));
+            mCountryList.add(new CountryItem("English", R.drawable.button_language_en, Language.LanguageCode.EN));
+            mCountryList.add(new CountryItem("Français", R.drawable.button_language_fr, Language.LanguageCode.FR));
+            mCountryList.add(new CountryItem("Deutsch", R.drawable.button_language_de, Language.LanguageCode.DE));
         }
 
     
