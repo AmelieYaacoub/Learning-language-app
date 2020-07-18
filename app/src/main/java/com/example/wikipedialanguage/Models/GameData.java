@@ -6,8 +6,8 @@ public class GameData {
 
     private String _GameText;
     private String _GameTextWithBlanks;
-    private ArrayList<String> _MissingWords;
-    private ArrayList<Integer> _MissingWordsPositions;
+    private ArrayList<String> _MissingWords; //which words were took out
+    private ArrayList<Integer> _MissingWordsPositions; //from which position was it taking from
 
     public GameData(String GameText){
 
@@ -46,7 +46,7 @@ public class GameData {
 
     public ArrayList<String> getMissingWords() {
         return _MissingWords;
-    }
+    } //Array with the selected words, collected in an array
 
     public void setMissingWords(ArrayList<String> _MissingWords) {
         this._MissingWords = _MissingWords;

@@ -22,8 +22,8 @@ public class CountryAdapter extends ArrayAdapter<CountryItem> {
     public CountryAdapter(Context context, ArrayList<CountryItem> countryList) {
         super(context, 0, countryList);
     }
-    @NonNull
-    @Override
+    @NonNull //Kind of a null-check statement
+    @Override //@Override is used when you override a method in sub class
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         return initView(position, convertView, parent);
     }

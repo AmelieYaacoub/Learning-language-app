@@ -10,11 +10,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="363dp"
-        android:layout_height="630dp"
+        android:layout_width="408dp"
+        android:layout_height="719dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
@@ -24,12 +25,13 @@
             android:layout_width="wrap_content"
             android:layout_height="424dp"
             android:gravity="center"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:layout_margin="0dp"/>
 
         <TextView
             android:id="@+id/wordList"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="223dp"
             android:gravity="center"
             android:textSize="17sp" />
 
@@ -38,21 +40,20 @@
     <LinearLayout
         android:id="@+id/linearTopLayout"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="96dp"
         android:background="@drawable/shadow"
         android:elevation="20dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="45dp"
+            android:layout_height="44dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
@@ -66,8 +67,8 @@
 
         <Button
             android:id="@+id/restartButton"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="46dp"
+            android:layout_height="45dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
@@ -81,12 +82,12 @@
 
         <ImageView
             android:id="@+id/lingopediaLogoGame"
-            android:layout_width="60dp"
-            android:layout_height="70dp"
-            android:background="@drawable/lingopedia"
+            android:layout_width="48dp"
+            android:layout_height="57dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/lingopedia"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -96,11 +97,12 @@
 
         <Spinner
             android:id="@+id/spinner_countries"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="49dp"
+            android:layout_height="48dp"
             android:layout_marginTop="10dp" />
 
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
