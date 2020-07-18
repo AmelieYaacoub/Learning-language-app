@@ -73,10 +73,11 @@ public class GameTextActivity extends AppCompatActivity {
         TextView wordListView = (TextView) findViewById(R.id.wordList);
 
         GameData gameData = callWordList.GetWordsFromRandomText(countryItem.getLanguageCode());
-        String res = String.join(",", gameData.getMissingWords());
+        String res = String.join(", ", gameData.getMissingWords());
         wordListView.setText(res);
         mainText.setText(gameData.get_GameTextWithBlanks());
         }
+
 
 
     public void GoBack(View V){
